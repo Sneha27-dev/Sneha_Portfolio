@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneha</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── PROJECTS TABS ── */
+  .proj-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 40px;
+    background: var(--border);
+    border-radius: 10px;
+    padding: 4px;
+    width: fit-content;
+  }
+  .proj-tab {
+    padding: 10px 28px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .proj-tab.active {
+    background: var(--charcoal);
+    color: var(--cream);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .proj-tab:not(.active):hover {
+    color: var(--charcoal);
+    background: rgba(0,0,0,0.05);
+  }
+
+  .proj-panel { display: none; }
+  .proj-panel.active { display: grid; }
+
+  /* 3-col for academic, 3-col for personal */
+  #panel-academic { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  #panel-personal { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  @media (max-width: 900px) {
+    #panel-academic, #panel-personal { grid-template-columns: 1fr; }
+    .proj-tabs { width: 100%; }
+  }
+
+  /* proj-card badge for category */
+  .proj-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Sneha <span>.</span></div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <div class="hero-tag"> Bangalore, India</div>
+    <h1 class="hero-name">Sneha<br></h1>
+    <p class="hero-title">Information Science & Engineering · CGPA 9.02</p>
+    <p class="hero-desc">Motivated Information Science and Engineering graduate with a strong academic record (CGPA 9.02) and hands
+on internship experience in web development and data analytics. Skilled in building user-friendly applications and 
+working with data visualization and analysis tools. Quick learner with strong problem-solving abilities, seeking 
+opportunities in frontend development, Android app development or data analytics roles. </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="Sneha_Resume.pdf" download class="btn-outline">Download Resume</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://www.linkedin.com/in/sneha-ganiga-557181312" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Sneha27-dev" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:snehaganiga1527@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-float s2 reveal">
+      <div class="num">9.02</div>
+      <div class="label">CGPA</div>
+    </div>
+    <div class="hero-stat-float s1 reveal">
+      <div class="num">4+</div>
+      <div class="label">Projects</div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="profile.jpg" alt="Sneha">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <h2 class="section-title">Who I Am</h2>
+  <div class="about-grid">
+    <div class="about-card reveal">
+      <span class="icon">👩‍💻</span>
+      <h3>Who I Am</h3>
+      <p>Information Science and Engineering graduate with strong interest in data analytics, frontend development, and software engineering. I enjoy building solutions — from insightful dashboards to responsive web apps — that create real-world impact.</p>
+    </div>
+    <div class="about-card reveal">
+      <span class="icon">🚀</span>
+      <h3>What I Do</h3>
+      <p>I build interactive dashboards, analyze datasets, develop Android apps, and create web applications — using Excel, SQL, Power BI, Kotlin, HTML, CSS and JavaScript.</p>
+    </div>
+    <div class="about-card reveal">
+      <span class="icon">🎯</span>
+      <h3>My Goal</h3>
+      <p>To start my career in Data Analytics, Frontend Development, or Software Engineering and work on impactful projects. I aim to continuously grow my technical, analytical, and problem-solving skills.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">My Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group reveal">
+      <h4>Frontend</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h4>Data & Analytics</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Microsoft Excel</span>
+        <span class="skill-tag">Power BI</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h4>Mobile App Development</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Kotlin</span>
+        <span class="skill-tag">Jetpack Compose</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h4>Tools</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">VS Code</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-year">May 2026</div>
+      <div class="exp-content">
+        <h3>Android App Development using Gen AI Intern</h3>
+        <div class="company">MindMatrix</div>
+        <ul>
+          <li>Developed Android applications integrating Generative AI concepts for real-time functionality.</li>
+          <li>Built <em>Pratham-Chikitse</em>, a healthcare app using Kotlin and Jetpack Compose with MVVM architecture.</li>
+          <li>Gained hands-on experience in mobile application architecture and end-to-end project delivery.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-year">Apr 2026</div>
+      <div class="exp-content">
+        <h3>Data Analyst Intern</h3>
+        <div class="company">Innobyte Services</div>
+        <ul>
+          <li>Performed exploratory data analysis (EDA) using Excel to identify trends and clean datasets.</li>
+          <li>Built interactive Power BI dashboards — including an Amazon Sales Analysis Dashboard — to surface actionable business insights.</li>
+          <li>Collaborated cross-functionally to prepare data-driven reports supporting strategic decision-making.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-year">Apr 2025</div>
+      <div class="exp-content">
+        <h3>MERN Stack Development Intern</h3>
+        <div class="company">Edunet Foundation</div>
+        <ul>
+          <li>Built a full-stack Recipe Sharing App using HTML, CSS, JavaScript, and MongoDB.</li>
+          <li>Designed intuitive front-end interfaces and conducted performance and usability testing.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Projects</h2>
+
+  <!-- Tabs -->
+  <div class="proj-tabs">
+    <button class="proj-tab active" onclick="switchTab('academic', this)">Academic Projects</button>
+    <button class="proj-tab" onclick="switchTab('personal', this)">Personal Projects</button>
+  </div>
+
+  <!-- Academic Projects -->
+  <div class="proj-panel active" id="panel-academic">
+
+    <div class="proj-card reveal">
+      <div class="proj-num">01</div>
+      <h3>AWS Wild Rydes — Serverless Ride Request System</h3>
+      <p>Architected a scalable ride request platform using serverless AWS services, reducing infrastructure overhead. Implemented real-time data processing pipelines and secure user authentication.</p>
+      <div class="proj-tech">
+        <span>AWS Lambda</span>
+        <span>API Gateway</span>
+        <span>DynamoDB</span>
+        <span>S3</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-num">02</div>
+      <h3>Accident Predictive Analysis with Real-Time Alert</h3>
+      <p>Built a deep learning-based driver assistance system using CNN and YOLO for real-time accident prediction. Integrated smart alert mechanisms for proximity warnings and overtaking assistance — no hardware sensors required.</p>
+      <div class="proj-tech">
+        <span>Python</span>
+        <span>CNN</span>
+        <span>YOLO</span>
+        <span>Machine Learning</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-num">03</div>
+      <h3>Amazon Sales Analysis Dashboard</h3>
+      <p>Analyzed Amazon sales data to identify trends, top-performing products, and revenue patterns. Cleaned and transformed raw datasets, then designed interactive Power BI dashboards with actionable regional and product insights.</p>
+      <div class="proj-tech">
+        <span>Power BI</span>
+        <span>Excel</span>
+        <span>EDA</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Personal Projects -->
+  <div class="proj-panel" id="panel-personal">
+
+    <div class="proj-card reveal">
+      <div class="proj-num">01</div>
+      <h3>Pratham-Chikitse — Emergency First-Aid App</h3>
+      <p>Developed a fully offline Android first-aid app with Text-to-Speech audio and step-by-step emergency guidance covering burns, choking, snakebites, and more. Clean minimal UI with MVVM architecture and Generative AI health assistance.</p>
+      <div class="proj-tech">
+        <span>Kotlin</span>
+        <span>Jetpack Compose</span>
+        <span>Gen AI</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-num">02</div>
+      <h3>Pet Care Chatbot</h3>
+      <p>Built a conversational chatbot for pet owners providing instant guidance on pet health, nutrition, and care routines. Designed with a friendly UI and intelligent response flow to help users with common pet-related queries.</p>
+      <div class="proj-tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-num">03</div>
+      <h3>Recipe Sharing Web App</h3>
+      <p>Full-stack Recipe Sharing App where users can browse, add, and manage recipes. Built with the MERN stack, featuring a responsive UI, user-friendly forms, and MongoDB as the data backend.</p>
+      <div class="proj-tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>MongoDB</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Academic</div>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-year">2022 – 2026</div>
+      <h3>B.E. Information Science & Engineering</h3>
+      <p class="inst">Vivekananda Institute of Technology, Bangalore</p>
+      <span class="edu-grade">CGPA: 9.02</span>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">2020 – 2022</div>
+      <h3>Pre-University Certificate (PUC)</h3>
+      <p class="inst">Govt. PU College, Byndoor</p>
+      <span class="edu-grade">85%</span>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">2019 – 2020</div>
+      <h3>SSLC</h3>
+      <p class="inst">Morarji Desai Residential School, Koteshwara</p>
+      <span class="edu-grade">85%</span>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs" style="background:var(--accent-pale); padding:80px 80px;">
+  <div class="section-label">Credentials</div>
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-list">
+    <div class="cert-item reveal">
+      <div class="cert-icon"><i class="fas fa-mobile-alt"></i></div>
+      <div class="cert-info">
+        <h4>Android App Development using Generative AI</h4>
+        <p>MindMatrix</p>
+      </div>
+    </div>
+    <div class="cert-item reveal">
+      <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+      <div class="cert-info">
+        <h4>Data Analyst Internship Certificate</h4>
+        <p>Innobyte Services</p>
+      </div>
+    </div>
+    <div class="cert-item reveal">
+      <div class="cert-icon"><i class="fas fa-code"></i></div>
+      <div class="cert-info">
+        <h4>Building Modern Web Applications with MERN Stack</h4>
+        <p>Edunet Foundation</p>
+      </div>
+    </div>
+    <div class="cert-item reveal">
+      <div class="cert-icon"><i class="fas fa-layer-group"></i></div>
+      <div class="cert-info">
+        <h4>Data Structures and Algorithms Using Java</h4>
+        <p>NPTEL</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact-wrap">
+    <div class="contact-info reveal">
+      <p>I'm open to full-time roles in Data Analytics, Frontend Development, and Software Engineering, as well as internships and collaborative projects. Feel free to reach out — I'd love to connect!</p>
+      <div class="contact-detail"><i class="fas fa-envelope"></i> snehaganiga1527@gmail.com</div>
+      <div class="contact-detail"><i class="fas fa-phone"></i> +91 9008725671</div>
+      <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> Bangalore, India</div>
+      <div class="contact-detail"><i class="fas fa-language"></i> English, Kannada</div>
+    </div>
+    <form class="contact-form reveal" id="contactForm">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="from_email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Sneha </p>
+  <div class="footer-links">
+    <a href="https://github.com/Sneha27-dev" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/sneha-ganiga-557181312" target="_blank">LinkedIn</a>
+    <a href="mailto:snehaganiga1527@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+<script>
+  function switchTab(tab, btn) {
+    // Update buttons
+    document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    // Update panels
+    document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + tab).classList.add('active');
+    // Re-trigger reveal for newly visible cards
+    document.querySelectorAll('#panel-' + tab + ' .reveal').forEach(el => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), 50);
+    });
+  }
+</script>
+</body>
+</html>
