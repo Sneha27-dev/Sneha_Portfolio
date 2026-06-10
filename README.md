@@ -1,6 +1,6 @@
 # 🌐 Sneha Ganiga — Personal Portfolio
 
-[![Live Website](https://img.shields.io/badge/Live%20Website-Visit%20Now-c8925a?style=for-the-badge&logo=vercel)](https://sneha-portfolio-silk-seven.vercel.app/)
+[![Live Website](https://img.shields.io/badge/Live%20Website-Visit%20Now-c8925a?style=for-the-badge&logo=vercel)](https://sneha-portfolio-chi.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sneha-ganiga-557181312)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/Sneha27-dev)
 
