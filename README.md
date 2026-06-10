@@ -15,7 +15,7 @@ I'm passionate about **Data Analytics**, **Frontend Development**, and **Softwar
 
 ## 🚀 Live Portfolio
 
-🔗 **https://sneha-portfolio-silk-seven.vercel.app/**
+🔗 **https://sneha-portfolio-chi.vercel.app/**
 
 ---
 
