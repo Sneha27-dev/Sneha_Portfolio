@@ -8,7 +8,7 @@
 
 ## 👩‍💻 About Me
 
-I'm a **Information Science and Engineering** graduate (CGPA: 9.02) from Vivekananda Institute of Technology, Bangalore.  
+I'm a **Information Science and Engineering** graduate (CGPA: 8.9) from Vivekananda Institute of Technology, Bangalore.  
 I'm passionate about **Data Analytics**, **Frontend Development**, and **Software Engineering** — building solutions that turn data into decisions and ideas into products.
 
 ---
@@ -80,6 +80,9 @@ I'm passionate about **Data Analytics**, **Frontend Development**, and **Softwar
 | 03 | petCare Chatbot | HTML, CSS, JavaScript |
 | 04 |Amazon Sales Analysis | Power BI, Excel, SQL |
 | 04 | Pratham-Chikitse — Emergency First-Aid App | Kotlin, Jetpack Compose |
+| 05 | Recipe Sharing App | HTML, CSS, JavaScript, MongoDB |
+| 06 | ActionMate — AI Personal Action Assistant | Python, Streamlit, Claude API, SQLLite |
+| 06 | Reception Voice Agent | Python, Whisper, Groq API, SQLLite |
 
 ---
 
@@ -89,6 +92,7 @@ I'm passionate about **Data Analytics**, **Frontend Development**, and **Softwar
 - Data Analyst Internship — **Innobyte Services**
 - Building Modern Web Apps with MERN Stack — **Edunet Foundation**
 - Data Structures and Algorithms using Java — **NPTEL**
+- Power BI Micro Course — **SkillCourse**
 
 ---
 
