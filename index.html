@@ -7,67 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
-<style>
-  /* ── PROJECTS TABS ── */
-  .proj-tabs {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 40px;
-    background: var(--border);
-    border-radius: 10px;
-    padding: 4px;
-    width: fit-content;
-  }
-  .proj-tab {
-    padding: 10px 28px;
-    border: none;
-    border-radius: 7px;
-    background: transparent;
-    color: var(--muted);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-  .proj-tab.active {
-    background: var(--charcoal);
-    color: var(--cream);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  .proj-tab:not(.active):hover {
-    color: var(--charcoal);
-    background: rgba(0,0,0,0.05);
-  }
-
-  .proj-panel { display: none; }
-  .proj-panel.active { display: grid; }
-
-  /* 3-col for academic, 3-col for personal */
-  #panel-academic { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  #panel-personal { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
-  @media (max-width: 900px) {
-    #panel-academic, #panel-personal { grid-template-columns: 1fr; }
-    .proj-tabs { width: 100%; }
-  }
-
-  /* proj-card badge for category */
-  .proj-badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 100px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-    background: var(--charcoal);
-    color: var(--cream);
-  }
-</style>
 </head>
 <body>
 
@@ -77,7 +16,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo">Sneha <span>.</span></div>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -86,6 +25,9 @@
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -93,11 +35,8 @@
   <div class="hero-left">
     <div class="hero-tag"> Bangalore, India</div>
     <h1 class="hero-name">Sneha<br></h1>
-    <p class="hero-title">Information Science & Engineering · CGPA 9.02</p>
-    <p class="hero-desc">Motivated Information Science and Engineering graduate with a strong academic record (CGPA 9.02) and hands
-on internship experience in web development and data analytics. Skilled in building user-friendly applications and 
-working with data visualization and analysis tools. Quick learner with strong problem-solving abilities, seeking 
-opportunities in frontend development, Android app development or data analytics roles. </p>
+    <p class="hero-title">Information Science & Engineering · CGPA 8.9</p>
+    <p class="hero-desc">Dedicated ISE graduate skilled in Python, SQL, Power BI, Excel, and web technologies. Experienced in data analytics, frontend development, and Android app development. Open to roles in Data Analytics, Frontend Development, and Software Engineering.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="Sneha_Resume.pdf" download class="btn-outline">Download Resume</a>
@@ -110,15 +49,15 @@ opportunities in frontend development, Android app development or data analytics
   </div>
   <div class="hero-right">
     <div class="hero-stat-float s2 reveal">
-      <div class="num">9.02</div>
+      <div class="num">8.9</div>
       <div class="label">CGPA</div>
     </div>
     <div class="hero-stat-float s1 reveal">
-      <div class="num">4+</div>
+      <div class="num">6+</div>
       <div class="label">Projects</div>
     </div>
     <div class="hero-photo-wrap">
-      <img src="profile.jpg" alt="Sneha">
+      <img src="profile.jpg" alt="Sneha Ganiga">
     </div>
   </div>
 </section>
@@ -131,12 +70,12 @@ opportunities in frontend development, Android app development or data analytics
     <div class="about-card reveal">
       <span class="icon">👩‍💻</span>
       <h3>Who I Am</h3>
-      <p>Information Science and Engineering graduate with strong interest in data analytics, frontend development, and software engineering. I enjoy building solutions — from insightful dashboards to responsive web apps — that create real-world impact.</p>
+      <p>Information Science and Engineering student with strong interest in data analytics, frontend development, and software engineering. I enjoy building solutions — from insightful dashboards to responsive web apps — that create real-world impact.</p>
     </div>
     <div class="about-card reveal">
       <span class="icon">🚀</span>
       <h3>What I Do</h3>
-      <p>I build interactive dashboards, analyze datasets, develop Android apps, and create web applications — using Excel, SQL, Power BI, Kotlin, HTML, CSS and JavaScript.</p>
+      <p>I build interactive dashboards, analyze datasets, develop Android apps, and create web applications — using Excel, SQL, Python, Power BI, Kotlin, HTML, CSS and the JavaScript.</p>
     </div>
     <div class="about-card reveal">
       <span class="icon">🎯</span>
@@ -152,31 +91,33 @@ opportunities in frontend development, Android app development or data analytics
   <h2 class="section-title">My Skills</h2>
   <div class="skills-grid">
     <div class="skill-group reveal">
-      <h4>Frontend</h4>
+      <h4>Languages</h4>
       <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Kotlin</span>
         <span class="skill-tag">HTML</span>
         <span class="skill-tag">CSS</span>
-        <span class="skill-tag">JavaScript</span>
       </div>
     </div>
     <div class="skill-group reveal">
       <h4>Data & Analytics</h4>
       <div class="skill-tags">
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Microsoft Excel</span>
         <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">MS Excel</span>
+        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">EDA</span>
+        <span class="skill-tag">Data Visualization</span>
+        <span class="skill-tag">Data Cleaning</span>
       </div>
     </div>
     <div class="skill-group reveal">
-      <h4>Mobile App Development</h4>
+      <h4>Frameworks & Tools</h4>
       <div class="skill-tags">
-        <span class="skill-tag">Kotlin</span>
         <span class="skill-tag">Jetpack Compose</span>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <h4>Tools</h4>
-      <div class="skill-tags">
+        <span class="skill-tag">CNN</span>
+        <span class="skill-tag">YOLO</span>
+        <span class="skill-tag">AWS</span>
         <span class="skill-tag">GitHub</span>
         <span class="skill-tag">VS Code</span>
       </div>
@@ -197,7 +138,6 @@ opportunities in frontend development, Android app development or data analytics
         <div class="company">MindMatrix</div>
         <ul>
           <li>Developed Android applications integrating Generative AI concepts for real-time functionality.</li>
-          <li>Built <em>Pratham-Chikitse</em>, a healthcare app using Kotlin and Jetpack Compose with MVVM architecture.</li>
           <li>Gained hands-on experience in mobile application architecture and end-to-end project delivery.</li>
         </ul>
       </div>
@@ -210,7 +150,7 @@ opportunities in frontend development, Android app development or data analytics
         <div class="company">Innobyte Services</div>
         <ul>
           <li>Performed exploratory data analysis (EDA) using Excel to identify trends and clean datasets.</li>
-          <li>Built interactive Power BI dashboards — including an Amazon Sales Analysis Dashboard — to surface actionable business insights.</li>
+          <li>Built interactive Power BI dashboards and visualizations to surface actionable business insights.</li>
           <li>Collaborated cross-functionally to prepare data-driven reports supporting strategic decision-making.</li>
         </ul>
       </div>
@@ -219,10 +159,10 @@ opportunities in frontend development, Android app development or data analytics
     <div class="exp-item reveal">
       <div class="exp-year">Apr 2025</div>
       <div class="exp-content">
-        <h3>MERN Stack Development Intern</h3>
+        <h3>Web Development Intern</h3>
         <div class="company">Edunet Foundation</div>
         <ul>
-          <li>Built a full-stack Recipe Sharing App using HTML, CSS, JavaScript, and MongoDB.</li>
+          <li>Developed responsive web applications using the MERN stack and RESTful APIs.</li>
           <li>Designed intuitive front-end interfaces and conducted performance and usability testing.</li>
         </ul>
       </div>
@@ -236,14 +176,8 @@ opportunities in frontend development, Android app development or data analytics
   <div class="section-label">Work</div>
   <h2 class="section-title">Projects</h2>
 
-  <!-- Tabs -->
-  <div class="proj-tabs">
-    <button class="proj-tab active" onclick="switchTab('academic', this)">Academic Projects</button>
-    <button class="proj-tab" onclick="switchTab('personal', this)">Personal Projects</button>
-  </div>
-
-  <!-- Academic Projects -->
-  <div class="proj-panel active" id="panel-academic">
+  <h3 class="proj-subhead reveal">Academic Projects</h3>
+  <div class="proj-grid">
 
     <div class="proj-card reveal">
       <div class="proj-num">01</div>
@@ -260,62 +194,72 @@ opportunities in frontend development, Android app development or data analytics
     <div class="proj-card reveal">
       <div class="proj-num">02</div>
       <h3>Accident Predictive Analysis with Real-Time Alert</h3>
-      <p>Built a deep learning-based driver assistance system using CNN and YOLO for real-time accident prediction. Integrated smart alert mechanisms for proximity warnings and overtaking assistance — no hardware sensors required.</p>
+      <p>Built a deep learning-based driver assistance system using CNN and YOLO for real-time accident prediction. Integrated smart alert mechanisms for proximity warnings and overtaking assistance.</p>
       <div class="proj-tech">
         <span>Python</span>
         <span>CNN</span>
         <span>YOLO</span>
-        <span>Machine Learning</span>
-      </div>
-    </div>
-
-    <div class="proj-card reveal">
-      <div class="proj-num">03</div>
-      <h3>Amazon Sales Analysis Dashboard</h3>
-      <p>Analyzed Amazon sales data to identify trends, top-performing products, and revenue patterns. Cleaned and transformed raw datasets, then designed interactive Power BI dashboards with actionable regional and product insights.</p>
-      <div class="proj-tech">
-        <span>Power BI</span>
-        <span>Excel</span>
-        <span>EDA</span>
       </div>
     </div>
 
   </div>
 
-  <!-- Personal Projects -->
-  <div class="proj-panel" id="panel-personal">
+  <h3 class="proj-subhead reveal">Personal Projects</h3>
+  <div class="proj-grid">
 
     <div class="proj-card reveal">
       <div class="proj-num">01</div>
-      <h3>Pratham-Chikitse — Emergency First-Aid App</h3>
-      <p>Developed a fully offline Android first-aid app with Text-to-Speech audio and step-by-step emergency guidance covering burns, choking, snakebites, and more. Clean minimal UI with MVVM architecture and Generative AI health assistance.</p>
+      <h3>Amazon Sales Analysis</h3>
+      <p>Analyzed Amazon sales data to identify trends, top-performing products, and revenue patterns. Designed interactive Power BI dashboards with charts and visualizations to present insights clearly.</p>
       <div class="proj-tech">
-        <span>Kotlin</span>
-        <span>Jetpack Compose</span>
-        <span>Gen AI</span>
+        <span>Power BI</span>
+        <span>Excel</span>
       </div>
     </div>
 
     <div class="proj-card reveal">
       <div class="proj-num">02</div>
-      <h3>Pet Care Chatbot</h3>
-      <p>Built a conversational chatbot for pet owners providing instant guidance on pet health, nutrition, and care routines. Designed with a friendly UI and intelligent response flow to help users with common pet-related queries.</p>
+      <h3>Pratham-Chikitse — Emergency First-Aid App</h3>
+      <p>Developed a fully offline Android first-aid app with Text-to-Speech audio and step-by-step emergency guidance covering burns, choking, and snakebites with a clean minimal UI.</p>
       <div class="proj-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
+        <span>Kotlin</span>
+        <span>Jetpack Compose</span>
       </div>
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-num">03</div>
-      <h3>Recipe Sharing Web App</h3>
-      <p>Full-stack Recipe Sharing App where users can browse, add, and manage recipes. Built with the MERN stack, featuring a responsive UI, user-friendly forms, and MongoDB as the data backend.</p>
+  <div class="proj-num">03</div>
+  <h3>Recipe Sharing App</h3>
+  <p>Developed a recipe sharing application that allows users to explore, create, and share recipes with details such as ingredients, cooking instructions, and images. Designed a user-friendly interface for browsing recipes and managing shared content.</p>
+  <div class="proj-tech">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>MongoDB</span>
+  </div>
+</div>
+
+    <div class="proj-card reveal">
+      <div class="proj-num">04</div>
+      <h3>ActionMate — AI Personal Action Assistant</h3>
+      <p>Built an agent that turns unstructured text like emails and messages into real calendar events and tasks. Pipeline extracts details with an LLM, checks for scheduling conflicts, asks for confirmation, then executes and verifies the actions before reporting success.</p>
       <div class="proj-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>MongoDB</span>
+        <span>Python</span>
+        <span>Streamlit</span>
+        <span>Claude API</span>
+        <span>SQLite</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-num">05</div>
+      <h3>Reception Voice Agent</h3>
+      <p>Developed a virtual receptionist that transcribes caller audio locally with Whisper, then uses Claude to extract the caller's name, intent, and callback number into a structured record. Includes a CLI to process, list, and search stored calls, with an automated test suite covering edge cases.</p>
+      <div class="proj-tech">
+        <span>Python</span>
+        <span>Whisper</span>
+        <span>Claude API</span>
+        <span>SQLite</span>
       </div>
     </div>
 
@@ -331,7 +275,7 @@ opportunities in frontend development, Android app development or data analytics
       <div class="edu-year">2022 – 2026</div>
       <h3>B.E. Information Science & Engineering</h3>
       <p class="inst">Vivekananda Institute of Technology, Bangalore</p>
-      <span class="edu-grade">CGPA: 9.02</span>
+      <span class="edu-grade">CGPA: 8.9</span>
     </div>
     <div class="edu-card reveal">
       <div class="edu-year">2020 – 2022</div>
@@ -381,6 +325,13 @@ opportunities in frontend development, Android app development or data analytics
         <p>NPTEL</p>
       </div>
     </div>
+    <div class="cert-item reveal">
+      <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="cert-info">
+        <h4>Power BI Micro Course</h4>
+        <p>SkillCourse</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -407,7 +358,7 @@ opportunities in frontend development, Android app development or data analytics
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Sneha </p>
+  <p>© 2026 Sneha Ganiga · Data Analyst</p>
   <div class="footer-links">
     <a href="https://github.com/Sneha27-dev" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/sneha-ganiga-557181312" target="_blank">LinkedIn</a>
@@ -417,20 +368,5 @@ opportunities in frontend development, Android app development or data analytics
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="script.js"></script>
-<script>
-  function switchTab(tab, btn) {
-    // Update buttons
-    document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    // Update panels
-    document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-' + tab).classList.add('active');
-    // Re-trigger reveal for newly visible cards
-    document.querySelectorAll('#panel-' + tab + ' .reveal').forEach(el => {
-      el.classList.remove('visible');
-      setTimeout(() => el.classList.add('visible'), 50);
-    });
-  }
-</script>
 </body>
 </html>
