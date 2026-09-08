@@ -773,7 +773,13 @@ footer p {
     background: var(--accent-pale);
   }
   .hero-photo-wrap { padding-top: 0; }
-  .hero-photo-wrap img { max-width: 260px; }
+  .hero-photo-wrap img {
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: top center;
+  }
   .hero-stat-float { display: none; }
   .hero-left { padding: 140px 32px 60px; }
   section { padding: 70px 32px; }
@@ -818,6 +824,5 @@ footer p {
   #certs { padding: 56px 22px !important; }
   .cert-item { flex-wrap: wrap; gap: 14px; padding: 20px; }
   .contact-detail { flex-wrap: wrap; }
-  .hero-photo-wrap img { max-width: 200px; }
-  .hero-right { height: 240px; }
+  .hero-right { height: 260px; }
 }
